@@ -1,0 +1,263 @@
+html,
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  scroll-behavior: smooth;
+  background-color: rgba(0, 0, 0);
+  color: white;
+  margin: 0;
+  padding: 0;
+}
+
+#header-bg {
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.8)),
+    url("../img/header.png");
+  height: 100vh;
+  object-fit: cover;
+  background-size: cover;
+  background-position: center;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#arrow-down {
+  width: 5vh;
+  padding: 4em;
+  transition: 500ms;
+}
+
+#arrow-down:hover {
+  width: 6vh;
+  padding: 2em;
+}
+
+#header-mini {
+  top: 0;
+  display: none;
+  position: sticky;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  gap: 2rem;
+  padding: 1rem;
+  background-color: rgb(80, 80, 80);
+  box-shadow: 0px 2px 2px 1px rgba(0, 0, 0, 0.2);
+  transition: 500ms;
+  z-index: 10;
+}
+
+#header-mini.show {
+  display: flex;
+  opacity: 1;
+}
+
+#header-bg > #arrow-down {
+  cursor: pointer;
+}
+
+#header-bg > h1 {
+  font-weight: 700;
+  font-size: 64px;
+  text-align: center;
+  color: white;
+}
+
+#header-bg > h2 {
+  font-weight: 200;
+  font-size: 32px;
+  text-align: center;
+  color: white;
+}
+
+main {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+section > h2 {
+  width: 100%;
+  text-align: center;
+}
+
+#content > h2,
+#content > h3,
+#content > p {
+  margin-block-start: 0px;
+  margin-block-end: 0px;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+}
+
+#content > ul > li {
+  padding-bottom: 1em;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  max-width: 80vw;
+  align-items: center;
+  padding: 2vw;
+  margin: 0.5em;
+  border-radius: 1em;
+  background-color: rgb(80, 80, 80);
+}
+
+.img-card {
+  width: 100%;
+  height: 50vh;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 0.5em;
+}
+
+.scroll {
+  scroll-margin-top: 10vh;
+}
+
+.under-header {
+  top: 10vh;
+}
+
+aside {
+  top: 10vh;
+  height: fit-content;
+  position: sticky;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-items: start;
+  background-color: transparent;
+  color: white;
+  padding: 2rem 1rem 1rem 1rem;
+}
+
+aside > div > p {
+  margin-block-start: 0px;
+  margin-block-end: 0px;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+}
+
+a {
+  color: white;
+}
+
+#buttons {
+  display: flex;
+  justify-content: center;
+}
+
+.button {
+  background-color: rgb(196, 196, 196);
+  display: flex;
+  align-items: center;
+  gap: 1em;
+  color: black;
+  padding: 1em;
+  margin: 1em;
+  border-radius: 1em;
+  cursor: pointer;
+  transition: 500ms;
+}
+
+.button:hover {
+  background-color: white;
+}
+
+.button-transparent {
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  gap: 1em;
+  color: white;
+  padding: 1em;
+  margin: 1em;
+  border-radius: 1em;
+  cursor: pointer;
+  transition: 500ms;
+}
+
+.button-transparent:hover {
+  background-color: white;
+  color: black;
+}
+
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1em;
+  padding: 1em;
+  gap: 0.5em;
+  color: white;
+  background-color: rgb(80, 80, 80);
+}
+
+footer > img {
+  height: 2em;
+}
+
+#about-me > #desc {
+  display: flex;
+  gap: 2vw;
+}
+
+#profile-img {
+  width: 25%;
+  border-radius: 100%;
+}
+
+@media (max-width: 970px) {
+  main {
+    flex-direction: column;
+    padding-left: unset;
+  }
+  aside {
+    flex-direction: row;
+    background-color: black;
+    padding: unset;
+    overflow: scroll;
+    width: 100%;
+    white-space: nowrap;
+    box-shadow: 0px 2px 2px 1px rgba(0, 0, 0, 0.2);
+  }
+
+  #header-bg > h1 {
+    font-size: 48px;
+  }
+
+  #header-bg > h2 {
+    font-size: 24px;
+  }
+
+  #arrow-down {
+    width: 8vh;
+    padding: 2em;
+  }
+
+  #arrow-down:hover {
+    width: 8vh;
+    padding: 2em;
+  }
+
+  #header-mini {
+    flex-direction: column;
+    padding: 0;
+  }
+
+  #header-mini > p {
+    display: none;
+  }
+
+  .card {
+    max-width: unset;
+  }
+}
