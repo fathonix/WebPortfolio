@@ -1,25 +1,26 @@
 "use strict";
 
-const bg = document.getElementById("header-bg");
-const header = document.getElementById("header-mini");
-const things = document.getElementById("things");
-const blog = document.getElementById("blog");
-const aboutMe = document.getElementById("about-me");
-const refThings = document.getElementById("ref-things");
-const refBlog = document.getElementById("ref-blog");
-const refAboutMe = document.getElementById("ref-about-me");
+const head = document.getElementsByTagName("head")[0];
+const aside = document.getElementsByTagName("aside")[0];
+const sections = document.getElementById("sections");
 const year = document.getElementById("year");
 
-const sectionH2Style = window.getComputedStyle(document.querySelector("section > h2"))
+function setScrollMargin(id, height, target) {
+  let style = document.getElementById(id);
+  if (!style) {
+    style = document.createElement("style");
+    style.id = id;
+    target.append(style);
+  }
 
-let bgHeight = bg.offsetHeight;
-let headerHeight = header.offsetHeight;
-let thingsHeight = bgHeight + things.offsetHeight;
-let blogHeight = thingsHeight + blog.offsetHeight;
-let aboutMeHeight = blogHeight + aboutMe.offsetHeight;
-let topMargin = headerHeight + parseInt(sectionH2Style.marginBlockStart.replace('px', ''));
+  style.innerHTML =
+    `.scroll { scroll-margin-top: ${height}px !important; } `;
+}
 
-const style = document.createElement("style");
+function removeElement(id) {
+  const el = document.getElementById(id);
+  if (el) el.remove();
+}
 
 function onScrollStop(callback) {
   if (!callback || typeof callback !== "function") return;
@@ -32,57 +33,71 @@ function onScrollStop(callback) {
       window.clearTimeout(isScrolling);
       isScrolling = setTimeout(() => {
         callback();
-      }, 66);
+      }, 30);
     },
     false
   );
 }
 
-function toggleRef(el) {
-  for (const item of [refThings, refBlog, refAboutMe]) {
-    if (item !== el) {
-      item.classList.remove("button");
-      item.classList.add("button-transparent");
+function toggleRef(refs, idx) {
+  let matchRef;
+
+  for (const ref of refs) {
+    if (ref.id === refs[idx].id) {
+      matchRef = ref;
     } else {
-      item.classList.remove("button-transparent");
-      item.classList.add("button");
+      ref.classList.remove("button");
+      ref.classList.add("button-transparent");
+    }
+  }
+
+  matchRef.classList.remove("button-transparent");
+  matchRef.classList.add("button");
+}
+
+function setBarFocus(sections, refs) {
+  const scroll = window.scrollY - (window.innerHeight / 3);
+  let heightSum = 0;
+  let heights = Array.from(sections)
+    .map((item) => heightSum += item.offsetHeight);
+
+  for (const idx in heights) {
+    if (scroll <= heights[idx] && scroll > (heights[idx + 1] || 0)) {
+      toggleRef(refs, idx);
+      return;
+    } else if (scroll < heights[idx]) {
+      toggleRef(refs, 0);
+      return;
+    } else if (scroll > heights[idx]) {
+      toggleRef(refs, refs.length - 1);
     }
   }
 }
 
-year.innerText = new Date().getFullYear().toString();
-
-style.innerHTML = `.scroll { scroll-margin-top: ${topMargin}px !important; } `;
-style.innerHTML += `.under-header { top: ${headerHeight}px !important; }`;
-document.getElementsByTagName("head")[0].appendChild(style);
-header.classList.remove("show");
-
-onscroll = () => {
-  if (window.scrollY >= bgHeight * 0.75) {
-    header.classList.add("show");
-  } else {
-    header.classList.remove("show");
+onload = () => {
+  year.innerText = new Date().getFullYear().toString();
+  
+  if (window.innerWidth <= 970) {
+    setScrollMargin(
+      "sections-style",
+      aside.offsetHeight,
+      head
+    );
   }
-};
+}
 
 onScrollStop(() => {
-  if (window.scrollY <= thingsHeight) {
-    toggleRef(refThings);
-  } else if (window.scrollY <= blogHeight && window.scrollY > thingsHeight) {
-    toggleRef(refBlog);
-  } else if (window.scrollY > blogHeight) {
-    toggleRef(refAboutMe);
-  }
+  setBarFocus(sections.children, aside.children);
 });
 
 onresize = () => {
-  bgHeight = bg.offsetHeight;
-  headerHeight = header.offsetHeight;
-  thingsHeight = bgHeight + things.offsetHeight;
-  blogHeight = thingsHeight + blog.offsetHeight;
-  aboutMeHeight = blogHeight + aboutMe.offsetHeight;
-  topMargin = headerHeight + parseInt(sectionH2Style.marginBlockStart.replace('px', ''));
-
-  style.innerHTML = `.scroll { scroll-margin-top: ${topMargin}px !important; } `;
-  style.innerHTML += `.under-header { top: ${headerHeight}px !important; }`;
+  if (window.innerWidth <= 970) {
+    setScrollMargin(
+      "sections-style",
+      aside.offsetHeight,
+      head
+    );
+  } else {
+    removeElement("sections-style");
+  }
 };
