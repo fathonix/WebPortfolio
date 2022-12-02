@@ -11,31 +11,52 @@
 </head>
 
 <body>
-  <header id="header-mini" class="show">
-    <h1>Aldo Adirajasa Fathoni</h1>
-    <p>FOSS and *nix enthusiast.</p>
-  </header>
   <div id="header-bg">
-    <h1>Aldo Adirajasa Fathoni</h1>
-    <h2>FOSS and *nix enthusiast.</h2>
+    <div id="header-text">
+      <h1>Aldo Adirajasa Fathoni</h1>
+      <h2>Hello! Click the arrow to get started.</h2>
+    </div>
     <img id="arrow-down" src="./assets/img/arrowdown.svg" alt="Scroll down"
-      onclick="window.location.href = '#things'" />
+      onclick="window.location.href = '#android-apps'" />
   </div>
   <main>
-    <aside class="under-header">
-      <div id="ref-things" class="button-transparent" onclick="window.location.href='#things'">
-        <p>Things I Made</p>
+    <aside>
+      <div id="ref-android-apps" class="button-transparent" onclick="window.location.href='#android-apps'">
+        <p>Android Apps</p>
       </div>
-      <div id="ref-blog" class="button-transparent" onclick="window.location.href='#blog'">
-        <p>Blog</p>
+      <div id="ref-flutter-apps" class="button-transparent" onclick="window.location.href='#flutter-apps'">
+        <p>Flutter Apps</p>
+      </div>
+      <div id="ref-websites" class="button-transparent" onclick="window.location.href='#websites'">
+        <p>Websites</p>
+      </div>
+      <div id="ref-ui-ux" class="button-transparent" onclick="window.location.href='#ui-ux'">
+        <p>UI/UX</p>
       </div>
       <div id="ref-about-me" class="button-transparent" onclick="window.location.href='#about-me'">
         <p>About Me</p>
       </div>
     </aside>
     <div id="sections">
-      <section id="things" class="scroll">
-        <h2>Things I Made</h2>
+      <section id="android-apps" class="scroll">
+        <h2>Android Apps</h2>
+        <article class="card">
+          <img class="img-card" src="./assets/img/technews.png" alt="Tech News image" />
+          <h2>Tech News</h2>
+          <p>Read tech news right on your phone.</p>
+          <img class="button" src="./assets/img/github.svg" alt="GitHub"
+            onclick="window.open('https://github.com/fathonix/TechNews')" />
+        </article>
+        <article class="card">
+          <img class="img-card" src="./assets/img/smartalarm.png" alt="Smart Alarm image" />
+          <h2>Smart Alarm</h2>
+          <p>Smart Alarm keeps you on track with time.</p>
+          <img class="button" src="./assets/img/github.svg" alt="GitHub"
+            onclick="window.open('https://github.com/fathonix/MyAlarmApp')" />
+        </article>
+      </section>
+      <section id="flutter-apps" class="scroll">
+        <h2>Flutter Apps</h2>
         <article class="card">
           <img class="img-card" src="./assets/img/knowphones.png" alt="KnowPhones image" />
           <h2>KnowPhones</h2>
@@ -44,93 +65,38 @@
             onclick="window.open('https://github.com/fathonix/KnowPhones')" />
         </article>
         <article class="card">
-          <img class="img-card" src="./assets/img/kenalivaksin.png" alt="KnowPhones image" />
+          <img class="img-card" src="./assets/img/kenalivaksin.png" alt="KenaliVaksin image" />
           <h2>KenaliVaksin</h2>
           <p>Know more about vaccines. An app made with Flutter.</p>
           <img class="button" src="./assets/img/github.svg" alt="GitHub"
             onclick="window.open('https://github.com/fathonix/KenaliVaksin')" />
         </article>
       </section>
-      <section id="blog" class="scroll">
-        <h2>Blog</h2>
+      <section id="websites" class="scroll">
+        <h2>Websites</h2>
         <article class="card">
-          <img class="img-card" src="./assets/img/sistem-komputer.jpeg" alt="KnowPhones image" />
-          <h2>Mengenal Sistem Komputer</h2>
-          <div id="content">
-            <h3>Sistem Komputer adalah kumpulan perangkat-perangkat komputer yang saling berhubungan dan berinteraksi
-              satu sama lain untuk melakukan proses pengolahan data, sehingga dapat menghasilkan informasi yang
-              diharapkan oleh penggunanya. Perangkat yang terdapat pada Sistem Komputer diantaranya Hardware,
-              Software, dan Brainware.</h3>
-            <br />
-            Perangkat tersebut memiliki fungsinya masing-masing pada sistem komputer, pada saat beroperasi pun ketiganya
-            saling bergantung dan saling mendukung satu sama lain, seperti hardware tidak dapat berinteraksi
-            dengan brainware tanpa software dan juga sebaliknya.
-            <br /><br />
-            Perangkat yang ada pada sistem komputer terdiri dari:
-            <br /><br />
-            <h3>Hardware</h3>
-            Hardware atau bisa disebut juga dengan perangkat keras adalah suatu perangkat elektronik yang ada pada
-            komputer, bisa dilihat secara kasat mata dan mampu disentuh secara fisik. Hardware sendiri dikategorikan
-            menjadi 3 jenis yakni:
-            <ul>
-              <li><span class="bold">Perangkat Input (Masukan)</span>: Perangkat keras yang digunakan untuk
-                memasukkan data kepada komputer, seperti: Mouse, Keyboard, Scanner, Microphone, dll.</li>
-              <li><span class="bold">Perangkat Process</span>: Perangkat keras yang berguna untuk menerima data dari
-                perangkat input dan memproses data tersebut, seperti: CPU, GPU, RAM, dll.</li>
-              <li><span class="bold">Perangkat Output (Keluaran)</span>: Perangkat keras yang digunakan untuk
-                menampilkan hasil dari data yang telah diolah oleh komputer, perangkat ini yang menampilkan informasi
-                kepada pengguna, seperti: Monitor, Proyektor, Printer, Speaker, dll.</li>
-            </ul>
-            <h3>Software</h3>
-            Software atau perangkat lunak adalah kumpulan data elektronik yang disimpan dan diatur oleh komputer, data
-            elektronik yang disimpan komputer dapat berupa program yang berguna untuk menjalankan suatu perintah.
-            Perangkat lunak bersifat tidak dapat dipegang.
-            <br />
-            <ul>
-              <li>
-                <span class="bold">Sistem Operasi (Operating System)</span>
-                <br />
-                Sistem Operasi yaitu program yang berfungsi untuk mengendalikan sistem kerja yang mendasar sehingga
-                dapat mengatur kerja media input, output, media pemroses, dll. seperti: Windows, macOS, Linux, dll.
-              </li>
-              <li>
-                <span class="bold">Program Aplikasi</span>
-                <br />
-                Program aplikasi adalah perangkat lunak yang di rancang khusus untuk kebutuhan tertentu, misalnya
-                program pengolah kata, pengolah presentasi, desain grafis, dll. Seperti: MS Word, MS Excel, Adobe
-                Photoshop, dll.
-              </li>
-            </ul>
-            <h3>Brainware</h3>
-            Brainware adalah orang yang mengoperasikan sebuah perangkat komputer. Brainware sering juga disebut
-            sebagai perangkat intelektual yang memakai dan menjelajahi kemampuan hardware ataupun software.
-            Pengguna komputer biasa disebut dengan user namun user sendiri ada macamnya, yaitu:
-            <br />
-            <ul>
-              <li>
-                <span class="bold">Programmer</span>
-                <br />
-                Programmer adalah orang yang memiliki kemampuan dalam bahasa pemrograman, sering berperan sebagai
-                pembuat software yang diperlukan pada sistem komputer.
-              </li>
-              <li>
-                <span class="bold">Administrator</span>
-                <br />
-                Administrator adalah orang yang bertugas mengelola sebuah sistem operasi dan program yang digunakan
-                pada komputer atau jaringan komputer.
-              </li>
-              <li>
-                <span class="bold">Operator</span>
-                <br />
-                Operator adalah orang yang menjalankan sistem operasi dan program dalam perangkat komputer.
-              </li>
-            </ul>
-            Demikian pengertian dari Sistem Komputer berikut perangkat-perangkat yang mendukung Sistem Komputer itu
-            sendiri. Kesimpulannya adalah Sistem Komputer adalah perangkat-perangkat komputer yang saling berinteraksi
-            satu sama lain, bertukar data, dan menghasilkan sebuah informasi yang di harapkan pengguna. Proses tersebut
-            pun didukung oleh software, hardware, dan brainware dimana ketiganya tidak bisa dipisahkan dan saling
-            mendukung dan bergantung satu sama lain.
-          </div>
+          <img class="img-card" src="./assets/img/bookshelf.png" alt="Bookshelf image" />
+          <h2>Bookshelf</h2>
+          <p>A simple website to organize books you read.</p>
+          <img class="button" src="./assets/img/github.svg" alt="GitHub"
+            onclick="window.open('https://github.com/fathonix/Bookshelf')" />
+        </article>
+      </section>
+      <section id="ui-ux" class="scroll">
+        <h2>UI/UX</h2>
+        <article class="card">
+          <img class="img-card" src="./assets/img/vaccineapp.png" alt="Vaccine app image" />
+          <h2>Vaccine App</h2>
+          <p>Vaccination &amp; COVID-19 Info Mobile App</p>
+          <img class="button" src="./assets/img/dribbble.svg" alt="GitHub"
+            onclick="window.open('https://dribbble.com/shots/16556909-Vaccination-COVID-19-Info-Mobile-App')" />
+        </article>
+        <article class="card">
+          <img class="img-card" src="./assets/img/kisahnabi.png" alt="KisahNabi image" />
+          <h2>KisahNabi</h2>
+          <p>KisahNabi is an app where you can read stories about prophets and their life.</p>
+          <img class="button" src="./assets/img/dribbble.svg" alt="GitHub"
+            onclick="window.open('https://dribbble.com/shots/18290420-KisahNabi-Prophet-Stories')" />
         </article>
       </section>
       <section id="about-me" class="scroll">
@@ -138,7 +104,9 @@
         <div class="card">
           <img id="profile-img" src="./assets/img/profile.png" alt="Profile image" />
           <p>
-            A person full of enthusiasm and excitement for computers and technology, especially FOSS and *nix stuff!
+            Hello! I’m Aldo. I’m currently a Vocational High School student at IDN Boarding School, majoring in Software Engineering.
+            I’m studying Mobile and Back-End Development, currently focusing in Android/Kotlin, Flutter and Node.js.
+            I'm also very interested in Free and Open-Source Software (FOSS) and Unix-like systems (especially Linux) so feel free to talk about them.
           </p>
           <div id="buttons">
             <div class="button" onclick="window.open('mailto:aldo.alfathoni@gmail.com')">
@@ -146,6 +114,9 @@
             </div>
             <div class="button" onclick="window.open('https://github.com/fathonix')">
               <img src="./assets/img/github.svg" /> GitHub
+            </div>
+            <div class="button" onclick="window.open('https://dribbble.com/fathonix')">
+              <img src="./assets/img/dribbble.svg" /> Dribbble
             </div>
           </div>
         </div>
